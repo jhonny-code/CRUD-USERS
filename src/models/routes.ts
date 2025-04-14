@@ -7,5 +7,8 @@ export const PrivateRoutes = {
   DASHBOARD: 'Examples',
   HOME: 'Home',
   CONTACT: 'Contact',
-  SEARCH: 'Search'
+  SEARCH: 'Search',
+  REGISTER: 'Register',
+  SETTINGS: 'Settings',
+  MOVIES: 'Movies'
 }

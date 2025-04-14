@@ -2,6 +2,36 @@ import { Character } from '../models';
 import { loadAbort } from '../utilities';
 import axios from 'axios';
 
+// src/services/userService.ts
+
+import { Usuario } from '../models/usuario.model';
+
+const endpoint = 'https://crudcrud.com/api/4ee95bb797954e168f96cc29ef2604a0/usuarios';
+
+export const fetchUsuarios = async (): Promise<Usuario[]> => {
+  const res = await axios.get<Usuario[]>(endpoint);
+  return res.data;
+};
+
+export const fetchUsuarioById = async (id: string): Promise<Usuario> => {
+  const res = await axios.get<Usuario>(`${endpoint}/${id}`);
+  return res.data;
+};
+
+export const createUsuario = async (data: Usuario): Promise<void> => {
+  await axios.post(endpoint, data);
+};
+
+export const updateUsuario = async (id: string, data: Usuario): Promise<void> => {
+  await axios.put(`${endpoint}/${id}`, data);
+};
+
+export const deleteUsuario = async (id: string): Promise<void> => {
+  await axios.delete(`${endpoint}/${id}`);
+};
+
+
+
 export const login = () => {
   const controller = loadAbort();
   return {

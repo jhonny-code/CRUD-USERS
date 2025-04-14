@@ -21,9 +21,15 @@ import { useNavigate } from 'react-router-dom';
 import { resetUser, UserKey } from '../redux/states/user';
 import { clearLocalStorage } from "../utilities";
 import { AppStore } from "../redux/store";
+import RegisterIcon from "@mui/icons-material/AppRegistration"; 
+import SettingsIcon from "@mui/icons-material/Settings";
+import LocalMoviesIcon from '@mui/icons-material/LocalMovies';
 
-const pages = [PrivateRoutes.HOME, PrivateRoutes.DASHBOARD, PrivateRoutes.CONTACT];
-const icons = [<HomeIcon/>,<DashboardIcon/>,<ContactMailIcon/>];
+
+
+
+const pages = [PrivateRoutes.HOME, PrivateRoutes.DASHBOARD, PrivateRoutes.CONTACT, PrivateRoutes.REGISTER, PrivateRoutes.SETTINGS, PrivateRoutes.MOVIES  ];
+const icons = [<HomeIcon/>,<DashboardIcon/>,<ContactMailIcon/>,<RegisterIcon/>,<SettingsIcon/>,<LocalMoviesIcon/>];
 
 interface Props {
   mode: 'light' | 'dark';
